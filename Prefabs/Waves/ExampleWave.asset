@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c09641226b8e0334dbfd586b3863c530, type: 3}
+  m_Name: ExampleWave
+  m_EditorClassIdentifier: 
+  _enemyTypes:
+  - _enemyType: {fileID: 3195187240724712129, guid: 8efa2595b9425b143a86af82359c0dae, type: 3}
+    _numberToSpawn: 3
+    _spawnDelay: 0.5
+  - _enemyType: {fileID: 3195187240724712129, guid: 8efa2595b9425b143a86af82359c0dae, type: 3}
+    _numberToSpawn: 5
+    _spawnDelay: 0.1
+  _numberOfEnemies: 5
+  _spawnDelay: 1
