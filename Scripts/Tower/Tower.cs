@@ -84,7 +84,7 @@ public class Tower : MonoBehaviour
         foreach (Enemy enemy in _enemies)
         {
             float enemyDistance = (enemy.transform.position - transform.position).magnitude;
-            if (enemyDistance < closeDistance)
+            if (enemyDistance < closeDistance && enemy)
             {
                 closeEnemy = enemy;
                 closeDistance = enemyDistance;
