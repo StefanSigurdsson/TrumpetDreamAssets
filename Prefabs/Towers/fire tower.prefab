@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da670e5a1d9e65647b5982182d56aa02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 6
+  towerInfo: {fileID: 11400000, guid: e9349eaa90470e54e9dd21c231d7d7f4, type: 2}
   reloadTime: 0.4
   projectile: {fileID: 8656439056672954642, guid: 0965ecc0dc4f73346b75d39624f484a7, type: 3}
   cost: 5

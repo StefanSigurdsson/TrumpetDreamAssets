@@ -5,22 +5,24 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
-    [SerializeField] private float attackRange = 3f;
-    [SerializeField] float reloadTime = 1f;
-    [SerializeField] GameObject projectile;
-    [SerializeField] int cost;
+
+    [SerializeField] public TowerInfo towerInfo;
+    [SerializeField] protected float reloadTime = 1f;
+    [SerializeField] protected GameObject projectile;
  
     public Enemy CurrentEnemyTarget { get; set; }
     public int Cost { get; set; }
+    public float AttackRange { get; set; }
 
-    private List<Enemy> _enemies;
-    private float _reloadTimer;
+    protected List<Enemy> _enemies;
+    protected float _reloadTimer;
 
     private void Start()
     {
         _enemies = new List<Enemy>();
         _reloadTimer = Time.time;
-        Cost = cost;
+        Cost = towerInfo.TowerCost;
+        AttackRange = towerInfo.AttackRange;
     }
 
     private void Update()
@@ -29,7 +31,7 @@ public class Tower : MonoBehaviour
         Shoot();
     }
 
-    private void Shoot()
+    protected virtual void Shoot()
     {
         // Check if the reload time has passed.
         if(CurrentEnemyTarget && Time.time >= _reloadTimer + reloadTime)
@@ -37,7 +39,7 @@ public class Tower : MonoBehaviour
             GetCurrentEnemyTarget();
             GameObject currentProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
             TowerProjectile firedProjectile = currentProjectile.GetComponent<TowerProjectile>();
-            firedProjectile.Target = CurrentEnemyTarget;
+            firedProjectile.Target = CurrentEnemyTarget.transform.position;
             _reloadTimer = Time.time;
         }
 
@@ -52,7 +54,6 @@ public class Tower : MonoBehaviour
         }
 
         CurrentEnemyTarget = GetClosestTarget();
-        CurrentEnemyTarget.Color = Color.red;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -78,7 +79,7 @@ public class Tower : MonoBehaviour
 
     private Enemy GetClosestTarget()
     {
-        float closeDistance = attackRange;
+        float closeDistance = AttackRange;
         Enemy closeEnemy = _enemies[0];
         foreach (Enemy enemy in _enemies)
         {

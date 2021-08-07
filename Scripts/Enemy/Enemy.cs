@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
 
     public float MoveSpeed { get; set; }
+
     public Color Color;
     public Waypoint Waypoint;
 
@@ -27,7 +28,6 @@ public class Enemy : MonoBehaviour
         _lastPointPosition = transform.position;
         _spriteRenderer = GetComponent<SpriteRenderer>();
         Color = _spriteRenderer.color;
-
     }
 
     // Update is called once per frame

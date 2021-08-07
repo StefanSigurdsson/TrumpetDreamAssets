@@ -8,7 +8,11 @@ public class LevelManager : Singleton<LevelManager>
     private Spawner Spawner;
     private List<Enemy> enemiesSpawned = new List<Enemy>();
 
+    public int CurrentMoney { get; set; }
+
     [SerializeField] Text waveNumberText;
+    [SerializeField] Text moneyText;
+    [SerializeField] int startMoney = 30;
 
     private bool _duringWave = false;
     private int _waveNumber;
@@ -17,14 +21,19 @@ public class LevelManager : Singleton<LevelManager>
     void Start()
     {
         Spawner = GetComponentInChildren<Spawner>();
+
         _waveNumber = 0;
         waveNumberText.text = "Wave: 1";
+        waveNumberText.color = Color.yellow;
+
+        CurrentMoney = startMoney;
+        moneyText.text = "Money: " + CurrentMoney.ToString();
+        moneyText.color = Color.yellow;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateMoneyText()
     {
-        
+        moneyText.text = "Money: " + CurrentMoney.ToString();
     }
 
     public void StartWave()

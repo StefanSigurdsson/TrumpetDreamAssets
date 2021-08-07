@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3195187240724712129
+--- !u!1 &381093359779362785
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,70 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8608132972189291382}
-  - component: {fileID: 162698598188957896}
-  - component: {fileID: 8538210213491493934}
-  - component: {fileID: -6224658143187959549}
-  - component: {fileID: 7839952788636916297}
-  - component: {fileID: 2606161266043508787}
-  m_Layer: 6
-  m_Name: Chicken
-  m_TagString: Enemy
+  - component: {fileID: 2833076570228781287}
+  m_Layer: 7
+  m_Name: FirePoint
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8608132972189291382
+--- !u!4 &2833076570228781287
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3195187240724712129}
+  m_GameObject: {fileID: 381093359779362785}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
+  m_Father: {fileID: 5195272507155945174}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5195272507155945176
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5195272507155945174}
+  - component: {fileID: 5195272507155945175}
+  - component: {fileID: 3300519652621673801}
+  - component: {fileID: 3489690868744727002}
+  - component: {fileID: 8632592950497743355}
+  m_Layer: 7
+  m_Name: ice-tower
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5195272507155945174
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5195272507155945176}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.74, y: 1.92, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_Children:
+  - {fileID: 2833076570228781287}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &162698598188957896
+--- !u!212 &5195272507155945175
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3195187240724712129}
+  m_GameObject: {fileID: 5195272507155945176}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -72,57 +102,68 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -465912943
-  m_SortingLayer: 3
+  m_SortingLayerID: -989964561
+  m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f9f89b537bc6d964c91defb1e602022f, type: 3}
+  m_Sprite: {fileID: 5938574112883047811, guid: 4a565b940f15009429d4bf888ed912cb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.234375, y: 0.234375}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8538210213491493934
+--- !u!114 &3300519652621673801
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3195187240724712129}
+  m_GameObject: {fileID: 5195272507155945176}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0227b40471da72c4da1de489f54d7888, type: 3}
+  m_Script: {fileID: 11500000, guid: bcccc2a9cf051464aa8ada4e67e4b481, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  Color: {r: 1, g: 1, b: 1, a: 0}
-  Waypoint: {fileID: 0}
---- !u!114 &-6224658143187959549
-MonoBehaviour:
+  towerInfo: {fileID: 11400000, guid: bfc52e9813af19f41af59c596382a211, type: 2}
+  reloadTime: 2
+  projectile: {fileID: 4672723707991634951, guid: c203669a566cf5a46a310ad0eec86a62, type: 3}
+  firePoints:
+  - {x: 2, y: 0, z: 0}
+  - {x: 2, y: 2, z: 0}
+  - {x: 2, y: -2, z: 0}
+  - {x: 0, y: -2, z: 0}
+  - {x: 0, y: 2, z: 0}
+  - {x: -2, y: 2, z: 0}
+  - {x: -2, y: 0, z: 0}
+  - {x: -2, y: -2, z: 0}
+--- !u!58 &3489690868744727002
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3195187240724712129}
+  m_GameObject: {fileID: 5195272507155945176}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 622db032f3c10014f91903ef13344cca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 1
-  moneyOnDeath: 1
---- !u!50 &7839952788636916297
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 6
+--- !u!50 &8632592950497743355
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3195187240724712129}
+  m_GameObject: {fileID: 5195272507155945176}
   m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -136,19 +177,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &2606161266043508787
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3195187240724712129}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.25

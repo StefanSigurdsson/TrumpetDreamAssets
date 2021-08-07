@@ -9,13 +9,13 @@ public class TowerProjectile : MonoBehaviour
     [SerializeField] float moveSpeed = 5;
     [SerializeField] int bulletDamage = 2;
 
-    public Enemy Target { get; set; }
+    public Vector3 Target { get; set; }
     private Vector3 targetPosition;
 
     // Start is called before the first frame update
     void Start()
     {
-        targetPosition = (Target.transform.position - transform.position).normalized;
+        targetPosition = (Target - transform.position).normalized;
     }
 
     // Update is called once per frame
