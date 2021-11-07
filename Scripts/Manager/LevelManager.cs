@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+enum GamePhase
+{
+    BetweenWaves,
+    Wave,
+    Shop
+};
+
 public class LevelManager : Singleton<LevelManager>
 {
     private Spawner Spawner;
@@ -17,6 +24,8 @@ public class LevelManager : Singleton<LevelManager>
     private bool _duringWave = false;
     private int _waveNumber;
 
+    GamePhase currentGamePhase;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +38,8 @@ public class LevelManager : Singleton<LevelManager>
         CurrentMoney = startMoney;
         moneyText.text = "Money: " + CurrentMoney.ToString();
         moneyText.color = Color.yellow;
+
+        currentGamePhase = GamePhase.BetweenWaves;
     }
 
     public void UpdateMoneyText()
@@ -49,6 +60,7 @@ public class LevelManager : Singleton<LevelManager>
                 _waveNumber = 0;
             }
             _duringWave = false;
+            currentGamePhase = GamePhase.Wave;
         } else {
             Debug.Log("wave in progress!");
         }
@@ -72,5 +84,20 @@ public class LevelManager : Singleton<LevelManager>
         }
 
         return true;
+    }
+
+    public void WaveHasEnded()
+    {
+        Debug.Log("hi from WaveHasEnded");
+        if(HasWaveEnded())
+        {
+            currentGamePhase = GamePhase.BetweenWaves;
+        }
+    }
+
+    public void OpenShop()
+    {
+        moneyText.text = "Money: " + CurrentMoney.ToString();
+        ShopManager.Instance.ToggleActivateShop();
     }
 }

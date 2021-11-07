@@ -26,11 +26,11 @@ public class TowerListManager : Singleton<TowerListManager>
         }
         else
         {
-            newPosition = transform.position;
+            newPosition = transform.Find("MenuBar/TowerButtons").position;
         }
         GameObject newButton = Instantiate(buttonPrefab, newPosition, Quaternion.identity);
         newButton.GetComponent<TowerButton>().towerPrefab = towerToAdd;
-        newButton.transform.SetParent(transform);
+        newButton.transform.SetParent(transform.Find("MenuBar/TowerButtons"));
 
         towerButtons.Add(newButton);
     }

@@ -6,6 +6,7 @@ using UnityEngine;
 public class TowerInfo : ScriptableObject
 {
     [SerializeField] public int TowerCost;
+    [SerializeField] public int GetTowerCost;
     [SerializeField] public int AttackRange;
     [SerializeField] public GameObject TowerPrefab;
 }

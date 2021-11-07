@@ -32,12 +32,13 @@ public class TileMapManager : Singleton<TileMapManager>
         {
             Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector3Int coordinate = grid.WorldToCell(mouseWorldPos);
+            Vector3 coordinateCenter = coordinate + new Vector3(0.5f, 0.5f, 0);
             
-            _towerHover.transform.position = coordinate;
+            _towerHover.transform.position = coordinateCenter;
             _towerHover.GetComponent<SpriteRenderer>().sprite = TowerToPlace.GetComponent<SpriteRenderer>().sprite;
 
 
-            if(!IsTileEmpty(coordinate))
+            if(!IsTileEmpty(coordinateCenter))
             {
                 attackColor = Color.red;
                 attackColor.a = 0.6f;
@@ -52,17 +53,17 @@ public class TileMapManager : Singleton<TileMapManager>
 
             if(Input.GetMouseButtonDown(0))
             {
-                ClickTile(coordinate, IsTileEmpty(coordinate));
+                ClickTile(coordinateCenter, IsTileEmpty(coordinateCenter));
                 _towerHover.GetComponent<SpriteRenderer>().sprite = null;
             }
         }
     }
 
-    private void ClickTile(Vector3Int coordinate, bool isEmpty)
+    private void ClickTile(Vector3 coordinateCenter, bool isEmpty)
     {
         if(TowerToPlace && isEmpty && Time.time >= placeCooldown + PlaceCooldown)
         {
-            GameObject newTower = Instantiate(TowerToPlace, coordinate, Quaternion.identity);
+            GameObject newTower = Instantiate(TowerToPlace, coordinateCenter, Quaternion.identity);
             newTower.transform.SetParent(transform);
             placedTowers.Add(newTower);
 
@@ -96,7 +97,7 @@ public class TileMapManager : Singleton<TileMapManager>
         }
     }
 
-    private bool IsTileEmpty(Vector3Int coordinate)
+    private bool IsTileEmpty(Vector3 coordinate)
     {
         foreach (GameObject tower in placedTowers)
         {

@@ -38,5 +38,7 @@ public class EnemyHealth : MonoBehaviour
         if(gameObject) {Destroy(gameObject);}
         LevelManager.Instance.CurrentMoney += MoneyOnDeath;
         LevelManager.Instance.UpdateMoneyText();
+        Debug.Log(gameObject);
+        LevelManager.Instance.HasWaveEnded();
     }
 }

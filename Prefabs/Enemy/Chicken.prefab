@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0227b40471da72c4da1de489f54d7888, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 2
   Color: {r: 1, g: 1, b: 1, a: 0}
   Waypoint: {fileID: 0}
 --- !u!114 &-6224658143187959549

@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: IceTower
   m_EditorClassIdentifier: 
   TowerCost: 25
+  GetTowerCost: 50
   AttackRange: 5
   TowerPrefab: {fileID: 5195272507155945176, guid: 9f301b004f4cb9249ab20a5e248c023e, type: 3}

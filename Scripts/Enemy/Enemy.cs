@@ -93,6 +93,7 @@ public class Enemy : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            LevelManager.Instance.HasWaveEnded();
         }
     }
 }

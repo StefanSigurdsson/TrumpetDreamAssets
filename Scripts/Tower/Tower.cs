@@ -36,7 +36,7 @@ public class Tower : MonoBehaviour
         // Check if the reload time has passed.
         if(CurrentEnemyTarget && Time.time >= _reloadTimer + reloadTime)
         {
-            GetCurrentEnemyTarget();
+            GetCurrentEnemyTarget(); //Maybe redundant?
             GameObject currentProjectile = Instantiate(projectile, transform.position, Quaternion.identity);
             TowerProjectile firedProjectile = currentProjectile.GetComponent<TowerProjectile>();
             firedProjectile.Target = CurrentEnemyTarget.transform.position;
@@ -84,7 +84,7 @@ public class Tower : MonoBehaviour
         foreach (Enemy enemy in _enemies)
         {
             float enemyDistance = (enemy.transform.position - transform.position).magnitude;
-            if (enemyDistance < closeDistance && enemy)
+            if ((enemyDistance < closeDistance) && enemy)
             {
                 closeEnemy = enemy;
                 closeDistance = enemyDistance;

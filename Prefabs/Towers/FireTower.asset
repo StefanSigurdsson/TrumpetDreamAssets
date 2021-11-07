@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: FireTower
   m_EditorClassIdentifier: 
   TowerCost: 10
+  GetTowerCost: 30
   AttackRange: 10
   TowerPrefab: {fileID: 9182839064996662627, guid: ee9a2bd3915e0124d96bfd4362f26f83, type: 3}
