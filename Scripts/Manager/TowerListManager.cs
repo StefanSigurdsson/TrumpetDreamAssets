@@ -18,6 +18,16 @@ public class TowerListManager : Singleton<TowerListManager>
 
     public void AddAvailibleTower(GameObject towerToAdd)
     {
+        foreach(GameObject tower in towerButtons)
+        {
+            if(tower.GetComponent<TowerButton>().towerPrefab.name == towerToAdd.name)
+            {
+                Debug.Log(tower.GetComponent<TowerButton>());
+                tower.GetComponent<TowerButton>().NumberAvailible++;
+                tower.GetComponent<TowerButton>().UpdateNumberAvailible();
+                return;
+            }
+        }
         availibleTowers.Add(towerToAdd);
         Vector3 newPosition;
         if(towerButtons.Count > 0)
