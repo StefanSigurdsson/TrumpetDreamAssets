@@ -7,7 +7,6 @@ public class TowerToBuy : Singleton<TowerToBuy>
 {
     [SerializeField] private TowerInfo towerInfoCard;
 
-    private Text placeCostText;
     private Text getCostText;
 
     private bool wasBought;
@@ -20,8 +19,6 @@ public class TowerToBuy : Singleton<TowerToBuy>
     */
 
     private void Start() {
-        placeCostText = transform.Find("Place Cost Text").GetComponent<Text>();
-        placeCostText.text = towerInfoCard.TowerCost.ToString() + " G";
         getCostText = transform.Find("Get Cost Text").GetComponent<Text>();
         getCostText.text = towerInfoCard.GetTowerCost.ToString() + " G";
         transform.GetComponent<Image>().sprite = towerInfoCard.TowerPrefab.GetComponent<SpriteRenderer>().sprite;

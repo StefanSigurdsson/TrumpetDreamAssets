@@ -23,8 +23,7 @@ public class TowerListManager : Singleton<TowerListManager>
             if(tower.GetComponent<TowerButton>().towerPrefab.name == towerToAdd.name)
             {
                 Debug.Log(tower.GetComponent<TowerButton>());
-                tower.GetComponent<TowerButton>().NumberAvailible++;
-                tower.GetComponent<TowerButton>().UpdateNumberAvailible();
+                tower.GetComponent<TowerButton>().UpdateNumberAvailible(1);
                 return;
             }
         }

@@ -73,28 +73,22 @@ public class TileMapManager : Singleton<TileMapManager>
         } 
     }
 
-    public void SetTowerToPlace(GameObject towerToAssign)
+    public void SetTowerToPlace(GameObject towerToAssign, ref int numberAvailible, ref Text numberText)
     {
-        int currentMoney = LevelManager.Instance.CurrentMoney;
-        int towerCost = towerToAssign.GetComponent<Tower>().towerInfo.TowerCost;
-        if(currentMoney >= towerCost)
+        if(numberAvailible<=0)
         {
-            LevelManager.Instance.CurrentMoney -= towerCost;
-            LevelManager.Instance.UpdateMoneyText();
-
-            TowerToPlace = towerToAssign;
-
-            float attackRange = TowerToPlace.GetComponent<Tower>().towerInfo.AttackRange;
-            _attackRange.transform.localScale = new Vector3(attackRange, attackRange, 1f);
-            _attackRange.SetActive(true);
-            towerToPlaceActive = true;
-
-            PlaceCooldown = Time.time;
+            return;
         }
-        else
-        {
-            Debug.Log("Not enough money!");
-        }
+        TowerToPlace = towerToAssign;
+
+        float attackRange = TowerToPlace.GetComponent<Tower>().towerInfo.AttackRange;
+        _attackRange.transform.localScale = new Vector3(attackRange, attackRange, 1f);
+        _attackRange.SetActive(true);
+        towerToPlaceActive = true;
+
+        PlaceCooldown = Time.time;
+        numberAvailible--;
+        numberText.text = numberAvailible.ToString();
     }
 
     private bool IsTileEmpty(Vector3 coordinate)
