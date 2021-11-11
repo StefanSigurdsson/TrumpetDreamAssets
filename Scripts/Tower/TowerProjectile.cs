@@ -8,8 +8,11 @@ public class TowerProjectile : MonoBehaviour
 
     [SerializeField] float moveSpeed = 5;
     [SerializeField] int bulletDamage = 2;
+    [SerializeField] int pierce = 1;
 
     public Vector3 Target { get; set; }
+    
+    private int enemiesHit = 0;
     private Vector3 targetPosition;
 
     // Start is called before the first frame update
@@ -38,9 +41,16 @@ public class TowerProjectile : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            EnemyHealth enemyHealth = other.GetComponentInParent<EnemyHealth>();
-            enemyHealth.TakeDamage(bulletDamage);
-            Destroy(gameObject);
+            if(enemiesHit<pierce)
+            {
+                EnemyHealth enemyHealth = other.GetComponentInParent<EnemyHealth>();
+                enemyHealth.TakeDamage(bulletDamage);
+                enemiesHit++;
+            }
+            if(enemiesHit>=pierce)
+            {
+                Destroy(gameObject);
+            }
         }
     }
     
