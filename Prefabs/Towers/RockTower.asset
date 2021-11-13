@@ -9,12 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c09641226b8e0334dbfd586b3863c530, type: 3}
-  m_Name: ExampleWave 1
+  m_Script: {fileID: 11500000, guid: c21003b3f24e2334cb7a6f3760fb6012, type: 3}
+  m_Name: RockTower
   m_EditorClassIdentifier: 
-  _enemyTypes:
-  - _enemyType: {fileID: 3195187240724712129, guid: 11a1d9ffe29442e4ba765971c50a8f1a, type: 3}
-    _numberToSpawn: 50
-    _spawnDelay: 0.2
-  _numberOfEnemies: 5
-  _spawnDelay: 1
+  TowerCost: 10
+  GetTowerCost: 10
+  AttackRange: 20
+  TowerPrefab: {fileID: 4455051080877707047, guid: c392f90e2360ba34cbc489e320d39598, type: 3}

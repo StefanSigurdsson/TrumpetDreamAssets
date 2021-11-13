@@ -35,6 +35,7 @@ public class TowerToBuy : Singleton<TowerToBuy>
         LevelManager.Instance.CurrentMoney -= towerInfoCard.GetTowerCost;
         getCostText.text = "PURCHASED";
         ShopManager.Instance.UpdateMoneyText();
+        LevelManager.Instance.UpdateMoneyText();
 
         wasBought = true;
     }

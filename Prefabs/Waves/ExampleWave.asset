@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: ExampleWave
   m_EditorClassIdentifier: 
   _enemyTypes:
-  - _enemyType: {fileID: 3195187240724712129, guid: 8efa2595b9425b143a86af82359c0dae, type: 3}
+  - _enemyType: {fileID: 3195187240724712129, guid: c05f1e8081d603c40954e20d233bef53, type: 3}
     _numberToSpawn: 3
     _spawnDelay: 0.5
-  - _enemyType: {fileID: 3195187240724712129, guid: 8efa2595b9425b143a86af82359c0dae, type: 3}
+  - _enemyType: {fileID: 3195187240724712129, guid: c05f1e8081d603c40954e20d233bef53, type: 3}
     _numberToSpawn: 5
-    _spawnDelay: 0.1
+    _spawnDelay: 0.5
   _numberOfEnemies: 5
-  _spawnDelay: 1
+  _spawnDelay: 2

@@ -16,10 +16,14 @@ public class LevelManager : Singleton<LevelManager>
     private List<Enemy> enemiesSpawned = new List<Enemy>();
 
     public int CurrentMoney { get; set; }
+    public int CurrentLife { get; set; }
 
     [SerializeField] Text waveNumberText;
     [SerializeField] Text moneyText;
+    [SerializeField] Text lifeText;
+
     [SerializeField] int startMoney = 30;
+    [SerializeField] int startLife = 100;
 
     private bool _duringWave = false;
     private int _waveNumber;
@@ -39,12 +43,20 @@ public class LevelManager : Singleton<LevelManager>
         moneyText.text = "Money: " + CurrentMoney.ToString();
         moneyText.color = Color.yellow;
 
+        CurrentLife = startLife;
+        UpdateLifeText();
+
         currentGamePhase = GamePhase.BetweenWaves;
     }
 
     public void UpdateMoneyText()
     {
         moneyText.text = "Money: " + CurrentMoney.ToString();
+    }
+
+    private void UpdateLifeText()
+    {
+        lifeText.text = CurrentLife.ToString() + " / " + startLife.ToString();
     }
 
     public void StartWave()
@@ -99,5 +111,11 @@ public class LevelManager : Singleton<LevelManager>
     {
         moneyText.text = "Money: " + CurrentMoney.ToString();
         ShopManager.Instance.ToggleActivateShop();
+    }
+
+    public void LoseLife(int lifeLost)
+    {
+        CurrentLife -= lifeLost;
+        UpdateLifeText();
     }
 }

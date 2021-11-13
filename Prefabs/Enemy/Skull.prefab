@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7839952788636916297}
   - component: {fileID: 2606161266043508787}
   m_Layer: 6
-  m_Name: Chicken
+  m_Name: Skull
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: -465912943
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f9f89b537bc6d964c91defb1e602022f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ad4a691c668294e48aa3e3c88cbdf655, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -113,8 +113,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 622db032f3c10014f91903ef13344cca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
-  moneyOnDeath: 10
+  maxHealth: 3
+  moneyOnDeath: 1
 --- !u!50 &7839952788636916297
 Rigidbody2D:
   serializedVersion: 4
