@@ -45,8 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _waves:
-  - {fileID: 11400000, guid: 730659e0d60fb374e8b972ee70ca55b1, type: 2}
-  - {fileID: 11400000, guid: 5ce77593d7ed0b142add49b3e71a6051, type: 2}
+  - {fileID: 11400000, guid: 4b2ec09396b09f84fa81864e83263be0, type: 2}
+  - {fileID: 11400000, guid: 9d2f566f60af5264593ca04cfe1e8a9b, type: 2}
+  - {fileID: 11400000, guid: e1de3bde555c0f04cba8760889a14914, type: 2}
+  NumberOfWaves: 0
 --- !u!114 &6631234147713643022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,8 +62,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points:
-  - {x: -13, y: 1.5, z: 0}
+  - {x: -15, y: 1.5, z: 0}
   - {x: -6.5, y: 1.5, z: 0}
   - {x: -6.5, y: -2.5, z: 0}
   - {x: 6.5, y: -2.5, z: 0}
-  - {x: 6.5, y: 6, z: 0}
+  - {x: 6.5, y: 8, z: 0}

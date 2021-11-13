@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerInfo: {fileID: 11400000, guid: bfc52e9813af19f41af59c596382a211, type: 2}
-  reloadTime: 2
+  reloadTime: 5
   projectile: {fileID: 4672723707991634951, guid: c203669a566cf5a46a310ad0eec86a62, type: 3}
   firePoints:
   - {x: 2, y: 0, z: 0}
