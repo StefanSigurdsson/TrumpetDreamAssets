@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1606247133239027709}
   - component: {fileID: 8429074660972346545}
-  - component: {fileID: 6150230997073591569}
   - component: {fileID: 8389607726602871158}
   - component: {fileID: 6441220521612007154}
+  - component: {fileID: 2094116008316103496}
   m_Layer: 8
   m_Name: ice-projectile
   m_TagString: Untagged
@@ -85,20 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6150230997073591569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4672723707991634951}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af0868865e8e19044adba9369e7f4a09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 15
-  bulletDamage: 1
 --- !u!58 &8389607726602871158
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -136,3 +122,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2094116008316103496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4672723707991634951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c5baf07325430d4e891110d1fed5d1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 15
+  bulletDamage: 1
+  pierce: 1

@@ -7154,7 +7154,7 @@ MonoBehaviour:
   waveNumberText: {fileID: 1527942234}
   moneyText: {fileID: 3650715008528638331}
   lifeText: {fileID: 736910006}
-  startMoney: 30
+  startMoney: 300
   startLife: 100
 --- !u!4 &1559695081
 Transform:
